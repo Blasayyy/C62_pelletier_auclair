@@ -50,6 +50,8 @@ class Synonymes_Training:
     def split_text_into_words(self):
         # splits text into words, not counting punctuation that isn't an end of sentence character (.?!)
         words = re.findall(r"\b\w+\b|[.!?]", self.text)
+        words = [word.lower() for word in words]
+
         self.words = words
 
     def fix_window(self, window):
