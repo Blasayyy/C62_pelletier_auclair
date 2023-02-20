@@ -13,7 +13,7 @@ def main():
     print(trainer.cooc_matrix)
 
     syn_filter = sf.Synonymes_Filter("tisane", 5, 1)
-    syn_filter.score_strategy(trainer.cooc_matrix)
+    syn_filter.scalar_product(trainer.cooc_matrix)
     print(syn_filter.score)
 
     return 0
