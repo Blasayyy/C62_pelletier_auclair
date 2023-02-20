@@ -49,7 +49,8 @@ class Synonymes_Training:
 
     def split_text_into_words(self):
         # splits text into words, not counting punctuation that isn't an end of sentence character (.?!)
-        words = re.findall(r"\b\w+\b|[.!?]", self.text)
+        words = re.findall(r'\b\w+\b', self.text)
+        # converts list to lowercase
         words = [word.lower() for word in words]
 
         self.words = words
