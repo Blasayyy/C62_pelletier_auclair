@@ -4,14 +4,15 @@ import Synonymes_Training as st
 
 
 def main():
-    chemin = "Tisane.txt"
+    chemin = "DonQuichotteUTF8.txt"
     enc = "utf-8"
 
     trainer = st.Synonymes_Training(chemin, enc)
     trainer.read()
     trainer.create_cooccurrence_matrix(5)
 
-    syn_filter = sf.Synonymes_Filter("tisane", 5, 1, trainer.word_indices)
+
+    syn_filter = sf.Synonymes_Filter("tendresse", 5, 1, trainer.word_indices)
     syn_filter.scalar_product(trainer.cooc_matrix)
     syn_filter.get_top_words()
     print("--------------------------")

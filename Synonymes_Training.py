@@ -40,10 +40,11 @@ class Synonymes_Training:
         # iterate over the input list of words and count co-occurrences within the window
         for i, word in enumerate(self.words):
             for j in range(i - window, i + window + 1):
-                if j != i and j >= 0 and j < len(self.words):
-                    other_word = self.words[j]
-                    if other_word in unique_words:
-                        cooc_mat[word_indices[word], word_indices[other_word]] += 1
+                if j != i:
+                    try:
+                        cooc_mat[word_indices[word], word_indices[self.words[j]]] += 1
+                    except:
+                        pass
 
         self.cooc_matrix = cooc_mat
 
