@@ -6,6 +6,7 @@ import Synonymes_Training as st
 def main():
     chemin = "DonQuichotteUTF8.txt"
     enc = "utf-8"
+    top_target = 5
 
     trainer = st.Synonymes_Training(chemin, enc)
     trainer.read()
@@ -14,13 +15,13 @@ def main():
 
     syn_filter = sf.Synonymes_Filter("sancho", 5, 1, trainer.word_indices)
     syn_filter.scalar_product(trainer.cooc_matrix)
-    syn_filter.get_top_words()
+    syn_filter.get_top_words(top_target)
     print("--------------------------")
     syn_filter.city_block(trainer.cooc_matrix)
-    syn_filter.get_top_words()
+    syn_filter.get_top_words(top_target)
     print("--------------------------")
     syn_filter.least_square(trainer.cooc_matrix)
-    syn_filter.get_top_words()
+    syn_filter.get_top_words(top_target)
 
     return 0
 
