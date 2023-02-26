@@ -18,6 +18,9 @@ def main():
     print("--------------------------")
     syn_filter.city_block(trainer.cooc_matrix)
     syn_filter.get_top_words()
+    print("--------------------------")
+    syn_filter.least_square(trainer.cooc_matrix)
+    syn_filter.get_top_words()
 
     return 0
 
