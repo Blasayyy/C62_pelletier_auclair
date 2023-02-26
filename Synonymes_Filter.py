@@ -46,21 +46,8 @@ class Synonymes_Filter:
             for index in index_sort[0:75]:
                 if counter > 5:
                     break
-                if flipped_word_indices[index] in content:
+                if flipped_word_indices[index] in content or not 'à':
                     continue
                 print(f'{flipped_word_indices[index]} : {self.score[index]}')
                 counter += 1
-
-            # if 'Line 8' in content:
-            #     print('string exist')
-            # else:
-            #     print('string does not exist')
-
-        # for index in index_sort[0:50]:
-        #     if counter > 5:
-        #         break
-        #     if flipped_word_indices[index] in self.stop_words:
-        #         continue
-        #     print(f'{flipped_word_indices[index]} : {self.score[index]}')
-        #     counter += 1
 
