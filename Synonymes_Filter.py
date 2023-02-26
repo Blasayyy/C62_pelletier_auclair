@@ -5,7 +5,7 @@ class Synonymes_Filter:
         self.word_to_search = word_to_search
         self.nb_results = nb_results
         self.score_strategy = score_strategy
-        self.stop_words = {"le", "ta", "ton", "la"}
+        self.stop_words = {"le", "ta", "ton", "la", "de", "et", "l", "à"}
         self.word_indices = word_indices
 
     def scalar_product(self, cooc_matrix):
@@ -28,7 +28,7 @@ class Synonymes_Filter:
     def get_index_from_word(self):
         return self.word_indices[self.word_to_search]
 
-    def get_top_words(self):
+    def get_top_words(self, num_words):
         index_sort = np.argsort(self.score)[::-1]
         flipped_word_indices = {v: k for k, v in self.word_indices.items()}
         for index in index_sort[0:5]:
