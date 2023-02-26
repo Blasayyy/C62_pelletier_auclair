@@ -12,9 +12,9 @@ def main():
     trainer.create_cooccurrence_matrix(5)
 
     syn_filter = sf.Synonymes_Filter("tisane", 5, 1, trainer.word_indices)
-    # syn_filter.scalar_product(trainer.cooc_matrix)
-    # syn_filter.get_top_words()
-    # print("--------------------------")
+    syn_filter.scalar_product(trainer.cooc_matrix)
+    syn_filter.get_top_words()
+    print("--------------------------")
     syn_filter.city_block(trainer.cooc_matrix)
     syn_filter.get_top_words()
 
