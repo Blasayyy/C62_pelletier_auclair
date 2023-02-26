@@ -33,7 +33,6 @@ class Synonymes_Training:
         # create a dictionary to map each word to its index in the matrix
         word_indices = {word: i for i, word in enumerate(unique_words)}
         self.word_indices = word_indices
-        print(word_indices)
 
         # initialize a 2D numpy array with zeros
         cooc_mat = np.zeros((num_words, num_words))
