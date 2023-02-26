@@ -41,13 +41,12 @@ class Synonymes_Filter:
         top_counter = 0
         index_counter = 0
 
-        self.f = open('stop_words_french.txt', 'r', encoding="utf-8")
-        text = self.f.read()
+        stop_words = open('stop_words_french.txt', 'r', encoding="utf-8").read()
 
         while top_counter <= top_target:
             index = index_sort[index_counter]
 
-            if flipped_word_indices[index] in text or not 'à':
+            if flipped_word_indices[index] in stop_words or not 'à':
                 index_counter += 1
                 continue
 
