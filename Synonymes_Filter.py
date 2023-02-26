@@ -24,6 +24,13 @@ class Synonymes_Filter:
             score.append(np.abs(row - target_row).sum())
         self.score = score
 
+    def least_square(self, cooc_matrix):
+        row_index = self.get_index_from_word()
+        target_row = cooc_matrix[row_index]
+        score = []
+        for row in cooc_matrix:
+            score.append(np.sum(np.square(row - target_row)))
+        self.score = score
 
     def get_index_from_word(self):
         return self.word_indices[self.word_to_search]
