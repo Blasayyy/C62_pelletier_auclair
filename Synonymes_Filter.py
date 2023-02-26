@@ -46,7 +46,7 @@ class Synonymes_Filter:
         while top_counter <= top_target:
             index = index_sort[index_counter]
 
-            if flipped_word_indices[index] in stop_words or not 'à':
+            if flipped_word_indices[index] in stop_words:
                 index_counter += 1
                 continue
 
