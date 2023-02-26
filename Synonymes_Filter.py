@@ -28,8 +28,32 @@ class Synonymes_Filter:
     def get_index_from_word(self):
         return self.word_indices[self.word_to_search]
 
-    def get_top_words(self, num_words):
+    def get_top_words(self):
         index_sort = np.argsort(self.score)[::-1]
         flipped_word_indices = {v: k for k, v in self.word_indices.items()}
-        for index in index_sort[0:5]:
-            print(f'{flipped_word_indices[index]} : {self.score[index]}')
+        counter = 0
+
+        with open(r'stop_words_french.txt', 'r') as file:
+            content = file.read()
+
+            for index in index_sort[0:75]:
+                if counter > 5:
+                    break
+                if flipped_word_indices[index] in content:
+                    continue
+                print(f'{flipped_word_indices[index]} : {self.score[index]}')
+                counter += 1
+
+            # if 'Line 8' in content:
+            #     print('string exist')
+            # else:
+            #     print('string does not exist')
+
+        # for index in index_sort[0:50]:
+        #     if counter > 5:
+        #         break
+        #     if flipped_word_indices[index] in self.stop_words:
+        #         continue
+        #     print(f'{flipped_word_indices[index]} : {self.score[index]}')
+        #     counter += 1
+
