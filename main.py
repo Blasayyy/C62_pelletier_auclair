@@ -1,20 +1,37 @@
+import sys
+
 import Synonymes_Filter as sf
 import Synonymes_Training as st
+from sys import argv
 
 
 
-def main(top_target, encodage, chemin):
-    # chemin = "DonQuichotteUTF8.txt"
-    # enc = "utf-8"
-    # top_target = 5
+def main():
 
-    trainer = st.Synonymes_Training(chemin, encodage)
+    fenetre = argv[1]
+    enc = argv[2]
+    chemin = argv[3]
+
+    # print(argv[1], argv[2], argv[3])
+
+    trainer = st.Synonymes_Training(chemin, enc)
     trainer.read()
-    trainer.create_cooccurrence_matrix(top_target)
+    trainer.create_cooccurrence_matrix(int(fenetre))
 
+    text = input("\nEntrez un mot, le nombre de synonymes que vous voulez et la méthode de calcul"
+          "\n i.e. produit scalaire: 0, least-squares: 1, city-block: 2\n\nTapez q pour quitter.\n\n")
 
-    syn_filter = sf.Synonymes_Filter("tranquille", 5, 1, trainer.cooc_matrix, trainer.word_indices)
+    text = text.split()
+
+    # print(text[0], text[1], text[2])
+
+    if text[0] == "q":
+        sys.exit()
+
+    syn_filter = sf.Synonymes_Filter(text[0], int(text[1]), int(text[2]), trainer.cooc_matrix, trainer.word_indices)
     syn_filter.get_score()
+
+    print("\n")
     print(syn_filter.get_top_words())
 
     return 0
