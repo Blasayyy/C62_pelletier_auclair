@@ -7,6 +7,8 @@ from sys import argv
 
 
 def main():
+    chemin = "DonQuichotteUTF8.txt"
+    enc = "utf-8"
 
     fenetre = argv[1]
     enc = argv[2]
