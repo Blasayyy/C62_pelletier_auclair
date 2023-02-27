@@ -13,7 +13,7 @@ def main():
     trainer.create_cooccurrence_matrix(5)
 
 
-    syn_filter = sf.Synonymes_Filter("tranquille", 5, 1, trainer.cooc_matrix, trainer.word_indices)
+    syn_filter = sf.Synonymes_Filter("tranquille", 5, 3, trainer.cooc_matrix, trainer.word_indices)
     syn_filter.get_score()
     print(syn_filter.get_top_words())
 
