@@ -14,7 +14,9 @@ def main():
     enc = argv[2]
     chemin = argv[3]
 
-    # print(argv[1], argv[2], argv[3])
+
+
+    print(argv[1], argv[2], argv[3])
 
     trainer = st.Synonymes_Training(chemin, enc)
     trainer.read()
@@ -25,7 +27,7 @@ def main():
 
     text = text.split()
 
-    # print(text[0], text[1], text[2])
+    print(text[0], text[1], text[2])
 
     if text[0] == "q":
         sys.exit()
@@ -33,10 +35,12 @@ def main():
     syn_filter = sf.Synonymes_Filter(text[0], int(text[1]), int(text[2]), trainer.cooc_matrix, trainer.word_indices)
     syn_filter.get_score()
 
-    print("\n")
-    print(syn_filter.get_top_words())
+    syn_filter.get_top_words()
 
-    return 0
+    print("\n")
+    for word in syn_filter.top_results:
+        print(word)
+
 
 if __name__ == '__main__':
     quit(main())

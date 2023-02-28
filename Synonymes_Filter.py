@@ -7,6 +7,7 @@ class Synonymes_Filter:
         self.score_strategy = score_strategy
         self.word_indices = word_indices
         self.cooc_matrix = cooc_matrix
+        self.top_results = []
 
     def get_score(self):
         row_index = self.get_index_from_word()
@@ -39,13 +40,14 @@ class Synonymes_Filter:
         while top_counter < self.nb_results:
             index = index_sort[index_counter]
 
-            if flipped_word_indices[index] in stop_words:
+            if flipped_word_indices[index] in stop_words or flipped_word_indices[index] == self.word_to_search:
                 index_counter += 1
                 continue
             else:
                 top_counter += 1
                 index_counter += 1
                 if self.score[index] and flipped_word_indices[index]:
-                    print(f'{flipped_word_indices[index]} : {self.score[index]}')
+                    self.top_results.append(f'{flipped_word_indices[index]} : {self.score[index]}')
 
+        return self.top_results
 
