@@ -35,7 +35,7 @@ class Synonymes_Filter:
         top_counter = 0
         index_counter = 0
 
-        stop_words = open('stop_words_french.txt', 'r', encoding="utf-8").read()
+        stop_words = open('FichiersTexte/stop_words_french.txt', 'r', encoding="utf-8").read()
 
         while top_counter < self.nb_results:
             index = index_sort[index_counter]
