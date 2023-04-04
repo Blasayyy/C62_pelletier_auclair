@@ -15,17 +15,15 @@ class DAO:
         conn.close()
 
     def update_database(self, cooccurrence_matrix, index_dict, window):
-        # get the non-zero indices and values from the co-occurrence matrix
+
+        index_dict = {v: k for k, v in index_dict.items()}
         nonzero_indices = np.nonzero(cooccurrence_matrix)
         values = cooccurrence_matrix[nonzero_indices]
 
-        # connect to the database
         conn = sqlite3.connect('synonymes_db.db')
 
-        # create a cursor object
         c = conn.cursor()
 
-        # loop through the non-zero indices and insert the corresponding data into the database
         for i in range(len(nonzero_indices[0])):
             index_1 = nonzero_indices[0][i]
             index_2 = nonzero_indices[1][i]
@@ -35,7 +33,6 @@ class DAO:
             c.execute("INSERT INTO synonymes (word_1, word_2, window, score) VALUES (?, ?, ?, ?)",
                       (word_1, word_2, window, score))
 
-        # commit the changes and close the connection
         conn.commit()
         conn.close()
 
