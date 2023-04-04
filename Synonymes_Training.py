@@ -59,7 +59,6 @@ class Synonymes_Training:
         words = re.findall(r'\b\w+\b', self.text)
         # converts list to lowercase
         words = [word.lower() for word in words]
-
         self.words = words
 
     def fix_window(self, window):
