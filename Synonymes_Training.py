@@ -36,7 +36,7 @@ class Synonymes_Training:
         num_words = len(unique_words)
 
         # create a dictionary to map each word to its index in the matrix
-        word_indices = {i: word for i, word in enumerate(unique_words)}
+        word_indices = {word: i for i, word in enumerate(unique_words)}
         self.word_indices = word_indices
 
         # initialize a 2D numpy array with zeros
