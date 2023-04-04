@@ -11,8 +11,7 @@ class Synonymes_Training:
         self.cooc_matrix = None
         self.word_indices = None
         self.window = None
-        self.non_zero_matrix = None
-        self.non_zero_indices = None
+
 
 
     def __enter__(self):
@@ -28,7 +27,7 @@ class Synonymes_Training:
 
     def create_cooccurrence_matrix(self, window):
         self.split_text_into_words()
-        self.fix_window()
+        self.fix_window(window)
         window = self.window
 
         # get a list of unique words in the input list
@@ -37,7 +36,7 @@ class Synonymes_Training:
         num_words = len(unique_words)
 
         # create a dictionary to map each word to its index in the matrix
-        word_indices = {word: i for i, word in enumerate(unique_words)}
+        word_indices = {i: word for i, word in enumerate(unique_words)}
         self.word_indices = word_indices
 
         # initialize a 2D numpy array with zeros
@@ -67,14 +66,6 @@ class Synonymes_Training:
         else:
             window_fixed = (window - 1) / 2
 
-        self.window = window_fixed
+        self.window = int(window_fixed)
 
-    def remove_zero_entries(self):
-        non_zero_rows, non_zero_cols = np.nonzero(self.cooc_matrix)
-        unique_rows = np.unique(non_zero_rows)
-        unique_cols = np.unique(non_zero_cols)
-        new_matrix = self.cooc_matrix[unique_rows][:, unique_cols]
-        new_index_dict = {new_index: word for new_index, (old_index, word) in enumerate(self.word_indices.items()) if
-                          old_index in unique_cols}
-        self.non_zero_matrix = new_matrix
-        self.non_zero_indices = new_index_dict
+

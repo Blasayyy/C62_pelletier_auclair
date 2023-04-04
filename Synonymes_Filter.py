@@ -31,7 +31,7 @@ class Synonymes_Filter:
             index_sort = np.argsort(self.score)[::-1]
         else:
             index_sort = np.argsort(self.score)
-        flipped_word_indices = {v: k for k, v in self.word_indices.items()}
+
         top_counter = 0
         index_counter = 0
 
@@ -40,14 +40,14 @@ class Synonymes_Filter:
         while top_counter < self.nb_results:
             index = index_sort[index_counter]
 
-            if flipped_word_indices[index] in stop_words or flipped_word_indices[index] == self.word_to_search:
+            if self.word_indices[index] in stop_words or self.word_indices[index] == self.word_to_search:
                 index_counter += 1
                 continue
             else:
                 top_counter += 1
                 index_counter += 1
-                if self.score[index] and flipped_word_indices[index]:
-                    self.top_results.append(f'{flipped_word_indices[index]} : {self.score[index]}')
+                if self.score[index] and self.word_indices[index]:
+                    self.top_results.append(f'{self.word_indices[index]} : {self.score[index]}')
 
         return self.top_results
 
