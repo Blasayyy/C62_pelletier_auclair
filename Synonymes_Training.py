@@ -70,7 +70,6 @@ class Synonymes_Training:
 
         self.window = window_fixed
 
-
     def remove_zero_entries(self):
         non_zero_rows, non_zero_cols = np.nonzero(self.cooc_matrix)
         unique_rows = np.unique(non_zero_rows)
