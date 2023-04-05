@@ -2,9 +2,9 @@ from Synonymes_Training import Synonymes_Training as st
 import DAO
 
 def main():
-    chemin = ".\FichiersTexte\DonQuichotteUTF8.txt"
+    chemin = ".\FichiersTexte\LeVentreDeParisUTF8.txt"
     enc = "utf-8"
-    fenetre = 5
+    fenetre = 4
 
     trainer = st(chemin, enc)
     trainer.read()
