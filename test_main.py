@@ -16,7 +16,7 @@ def main():
     dao.create_synonymes_table()
     dao.delete_data()
     dao.update_database(trainer.cooc_matrix, trainer.word_indices, fenetre)
-    result = dao.get_top_related_words("antique", 10, 10)
+    result = dao.get_top_related_words("antique", 10, 10 )
     for w, s in result:
         print(w, s)
 

@@ -12,8 +12,6 @@ class Synonymes_Training:
         self.word_indices = None
         self.window = None
 
-
-
     def __enter__(self):
         self.read()
         return self
@@ -30,19 +28,15 @@ class Synonymes_Training:
         self.fix_window(window)
         window = self.window
 
-        # get a list of unique words in the input list
         unique_words = list(set(self.words))
         self.unique_words = unique_words
         num_words = len(unique_words)
 
-        # create a dictionary to map each word to its index in the matrix
         word_indices = {word: i for i, word in enumerate(unique_words)}
         self.word_indices = word_indices
 
-        # initialize a 2D numpy array with zeros
         cooc_mat = np.zeros((num_words, num_words))
 
-        # iterate over the input list of words and count co-occurrences within the window
         for i, word in enumerate(self.words):
             for j in range(i - window, i + window + 1):
                 if j != i:
@@ -54,9 +48,7 @@ class Synonymes_Training:
         self.cooc_matrix = cooc_mat
 
     def split_text_into_words(self):
-        # splits text into words, not counting punctuation
         words = re.findall(r'\b\w+\b', self.text)
-        # converts list to lowercase
         words = [word.lower() for word in words]
         self.words = words
 
@@ -67,5 +59,3 @@ class Synonymes_Training:
             window_fixed = (window - 1) / 2
 
         self.window = int(window_fixed)
-
-
