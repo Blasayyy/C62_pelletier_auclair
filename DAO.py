@@ -22,6 +22,8 @@ class DAO:
     def update_database(self, cooc_matrix, index_dict, window):
         conn = sqlite3.connect('synonymes_db.db')
         c = conn.cursor()
+        with open('.\FichiersTexte\stop_words_french.txt', 'r', encoding='utf-8') as f:
+            stop_words = set(line.strip() for line in f)
 
         index_dict = {v: k for k, v in index_dict.items()}
         nonzero_indices = cooc_matrix.nonzero()
@@ -34,14 +36,45 @@ class DAO:
             score = values[i]
             if word_1 > word_2:
                 word_1, word_2 = word_2, word_1
-            c.execute('''INSERT INTO synonymes (word_1, word_2, window, score)
-                         VALUES (?, ?, ?, ?)
-                         ON CONFLICT(word_1, word_2, window) DO UPDATE SET score = score + excluded.score''',
-                      (word_1, word_2, window, score))
+            if word_1 not in stop_words and word_2 not in stop_words:
+                c.execute('''INSERT INTO synonymes (word_1, word_2, window, score)
+                             VALUES (?, ?, ?, ?)
+                             ON CONFLICT(word_1, word_2, window) DO UPDATE SET score = score + excluded.score''',
+                          (word_1, word_2, window, score))
 
         conn.commit()
         conn.close()
 
+    def delete_data(self):
+        conn = sqlite3.connect('synonymes_db.db')
+        c = conn.cursor()
+        c.execute('DELETE FROM synonymes')
+        c.execute('DROP TABLE synonymes')
 
 
+        conn.commit()
+        conn.close()
 
+        self.create_synonymes_table()
+
+    def get_top_related_words(self, word, size, window):
+        conn = sqlite3.connect('synonymes_db.db')
+        c = conn.cursor()
+
+        # Get the top related words for word_1
+        c.execute('''SELECT word_2, score
+                     FROM synonymes
+                     WHERE word_1 = ? AND window = ?
+                     UNION
+                     SELECT word_1, score
+                     FROM synonymes
+                     WHERE word_2 = ? AND window = ?
+                     ORDER BY score DESC
+                     LIMIT ?''', (word, window, word, window, size))
+
+        # Filter out the input word from the results
+        results = [(w, s) for w, s in c.fetchall() if w != word]
+
+        conn.close()
+
+        return results
