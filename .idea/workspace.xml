@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8778bf2e-e126-4578-aa40-a8927cd85a45" name="Changes" comment="removed trash from README.md">
+      <change beforePath="$PROJECT_DIR$/test_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2MHWzsOQ69mgjuvL4OHr4x7Vpb5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TP2_Prof" />
+  </component>
+  <component name="RunManager" selected="Python.test_main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="C62_pelletier_auclair" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="C62_pelletier_auclair" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_main" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8778bf2e-e126-4578-aa40-a8927cd85a45" name="Changes" comment="" />
+      <created>1677425253333</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677425253333</updated>
+    </task>
+    <task id="LOCAL-00001" summary="added get_top_words which prints the highest scoring words">
+      <created>1677429956420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677429956420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added city block score calculation">
+      <created>1677431356289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677431356289</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added texts to repo">
+      <created>1677431491682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677431491682</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed performance issue">
+      <created>1677437850892</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677437850892</updated>
+    </task>
+    <task id="LOCAL-00005" summary="tisane">
+      <created>1677447608457</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677447608457</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added least squares shit">
+      <created>1677448602854</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677448602854</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed get_top_words">
+      <created>1677556520319</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677556520319</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added remove_zero_entries to training">
+      <created>1680572380322</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680572380322</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added DAO">
+      <created>1680572389448</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680572389448</updated>
+    </task>
+    <task id="LOCAL-00010" summary="tweaked things">
+      <created>1680577559588</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680577559589</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added update_database function">
+      <created>1680578862883</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680578862883</updated>
+    </task>
+    <task id="LOCAL-00012" summary="cleanup">
+      <created>1680579646610</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680579646610</updated>
+    </task>
+    <task id="LOCAL-00013" summary="multo chango">
+      <created>1680638749383</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680638749383</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixes">
+      <created>1680639022672</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680639022672</updated>
+    </task>
+    <task id="LOCAL-00015" summary="made dao able to insert information correctly into db">
+      <created>1680640319943</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680640319943</updated>
+    </task>
+    <task id="LOCAL-00016" summary="made it actually update correctly">
+      <created>1680717282074</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680717282074</updated>
+    </task>
+    <task id="LOCAL-00017" summary="improved performance + added delete_data + added get_top_related_words">
+      <created>1680739772720</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680739772721</updated>
+    </task>
+    <task id="LOCAL-00018" summary="removed trash from README.md">
+      <created>1680750707291</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680750707291</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added get_top_words which prints the highest scoring words" />
+    <MESSAGE value="added city block score calculation" />
+    <MESSAGE value="added texts to repo" />
+    <MESSAGE value="fixed performance issue" />
+    <MESSAGE value="tisane" />
+    <MESSAGE value="added least squares shit" />
+    <MESSAGE value="fixed get_top_words" />
+    <MESSAGE value="added remove_zero_entries to training" />
+    <MESSAGE value="added DAO" />
+    <MESSAGE value="tweaked things" />
+    <MESSAGE value="added update_database function" />
+    <MESSAGE value="cleanup" />
+    <MESSAGE value="multo chango" />
+    <MESSAGE value="fixes" />
+    <MESSAGE value="made dao able to insert information correctly into db" />
+    <MESSAGE value="made it actually update correctly" />
+    <MESSAGE value="improved performance + added delete_data + added get_top_related_words" />
+    <MESSAGE value="removed trash from README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed trash from README.md" />
+  </component>
+</project>
