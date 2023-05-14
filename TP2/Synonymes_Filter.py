@@ -50,4 +50,3 @@ class Synonymes_Filter:
                     self.top_results.append(f'{flipped_word_indices[index]} : {self.score[index]}')
 
         return self.top_results
-

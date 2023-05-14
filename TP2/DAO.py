@@ -1,4 +1,3 @@
-import numpy as np
 import sqlite3
 
 class DAO:
@@ -17,7 +16,6 @@ class DAO:
 
         conn.commit()
         conn.close()
-
 
     def update_database(self, cooc_matrix, index_dict, window):
         conn = sqlite3.connect('synonymes_db.db')
@@ -48,8 +46,7 @@ class DAO:
     def delete_data(self):
         conn = sqlite3.connect('synonymes_db.db')
         c = conn.cursor()
-        c.execute('DELETE FROM synonymes')
-        c.execute('DROP TABLE synonymes')
+        c.execute('DROP TABLE IF EXISTS synonymes')
 
 
         conn.commit()
@@ -57,11 +54,11 @@ class DAO:
 
         self.create_synonymes_table()
 
-    def get_top_related_words(self, word, size, window):
+    def get_top_related_words(self, word, size, window, mode):
         conn = sqlite3.connect('synonymes_db.db')
         c = conn.cursor()
+        self.mode = mode
 
-        # Get the top related words for word_1
         c.execute('''SELECT word_2, score
                      FROM synonymes
                      WHERE word_1 = ? AND window = ?
@@ -72,7 +69,6 @@ class DAO:
                      ORDER BY score DESC
                      LIMIT ?''', (word, window, word, window, size))
 
-        # Filter out the input word from the results
         results = [(w, s) for w, s in c.fetchall() if w != word]
 
         conn.close()
