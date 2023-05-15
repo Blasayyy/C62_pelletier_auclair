@@ -21,17 +21,17 @@ class KMeans2:
             self.model.partial_fit(data)
             self.labels = self.model.labels_
             changes = np.sum(old_labels != self.labels) if old_labels is not None else self.n_clusters
-            print(f'Iteration {i} completed in {time() - t} seconds ({changes} changes)')
+            print(f'Itération {i} effectués en {time() - t} secondes ({changes} changements)')
             self.print_cluster_info()
 
             if changes <= self.tol:
-                print(f'Converged in {i} iterations')
+                print(f'Clustering effectué en {i} itérations')
                 break
 
     def print_cluster_info(self):
         unique_labels, counts = np.unique(self.labels, return_counts=True)
         for label, count in zip(unique_labels, counts):
-            print(f'There are {count} words belonging in centroid {label}')
+            print(f'Il y a {count} mots appartenant au centroïde {label}')
         print('*' * 63)
 
     def get_centroids(self):
