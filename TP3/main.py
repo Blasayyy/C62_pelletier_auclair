@@ -6,6 +6,7 @@ from options import Options
 from ui import demander
 from time import time
 from KMeans2 import KMeans2
+from KMeans import KMeans
 from knn import KNN
 import utils
 
@@ -20,6 +21,8 @@ def main() -> int:
                 mots = bd.charger_mots()
                 data, idx_to_word = utils.create_data_matrix(cooccurrences, mots)
 
+                #pour utiliser l'autre version du kmeans
+                #model =  Kmeans(n_clusters= options.k)
                 model = KMeans2(n_clusters= options.k)
                 model.fit(data)
 
