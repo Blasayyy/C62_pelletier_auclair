@@ -9,8 +9,7 @@ class KMeans2:
         self.batch_size = batch_size
         self.max_iter = max_iter
         self.tol = tol
-        self.model = MiniBatchKMeans(n_clusters=n_clusters, batch_size=batch_size, max_iter=1, init_size=batch_size * 3,
-                                     n_init=3)
+        self.model = MiniBatchKMeans(n_clusters=n_clusters, batch_size=batch_size, max_iter=1, init_size=batch_size * 3)
         self.labels = None
 
     def fit(self, data):
